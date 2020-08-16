@@ -1,0 +1,21 @@
+header {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    height: 100px;
+    background-color: cornflowerblue;
+    background-position: fixed;
+    padding:10px
+}
+
+section {
+    float: left;
+    width: 80%;
+}
+
+.list-group {
+    float: left;
+    width: 20%;
+}
+
