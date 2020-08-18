@@ -13,12 +13,11 @@ $(document).ready(function() {
         var location = $("#search").val(); 
         var locationList = []; 
 
-        cityList = JSON.parse(localStorage.getItem("locationList")) || [];
+        locationList = JSON.parse(localStorage.getItem("locationList")) || [];
         locationList.push(location);
         localStorage.setItem("locationList", JSON.stringify(locationList));
     
-    });
-
+    getForecast(location);
 });
 
 function getForecast(location) {
@@ -72,3 +71,4 @@ function getForecast(location) {
     })
 })
 }
+});
