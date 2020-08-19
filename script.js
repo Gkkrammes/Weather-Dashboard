@@ -40,6 +40,7 @@ $(document).ready(function() {
         url: daily,
         method: "GET",
     }).then(function(response) {
+        console.log(response)
       
         
     var iconLink = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
@@ -48,7 +49,8 @@ $(document).ready(function() {
 
     $("#dailyForecast").append(
         "<div class='col'>"
-        +  "<h2 class='daily'>" + response.name + " (" + day1 + ")" + "&nbsp" + "<img src='" + iconLink  + "'>" + "</h2>"
+        + "<h5>" + "Daily Forecast" + "</h5>"
+        +  "<h2 class='daily'>" + response.name + " (" + currentDay + ")" + "&nbsp" + "<img src='" + iconLink  + "'>" + "</h2>"
         +  "<ul class='daily'>" + "Today's temperature is " +  response.main.temp + " °F." + "</ul>"
         +  "<ul class='daily'>" + "Today's humidity is " + response.main.humidity + "%." + "</ul>"
         +  "<ul class='daily'>" + "Today's wind speed is " +  response.wind.speed + " MPH." + "</ul>"
@@ -62,20 +64,35 @@ $(document).ready(function() {
         url: fiveDay,
         method: "GET",
     }).then(function(response) {
-              
-    
+        console.log(response)
+
     var iconLink1 = "http://openweathermap.org/img/w/" + response.daily[0].weather[0].icon + ".png";
     var iconLink2 = "http://openweathermap.org/img/w/" + response.daily[1].weather[0].icon + ".png";
     var iconLink3 = "http://openweathermap.org/img/w/" + response.daily[2].weather[0].icon + ".png";
     var iconLink4 = "http://openweathermap.org/img/w/" + response.daily[3].weather[0].icon + ".png";
     var iconLink5 = "http://openweathermap.org/img/w/" + response.daily[4].weather[0].icon + ".png";
+       
+    $("#dailyForecast").append(
+            "<div class='col'>"
+           + "<ul class='daily' id='uvIndex'>" + "Today's UV index is " +  response.current.uvi + "." + "</ul>"
+           + "</div>"
+           );
+
+           if (response.current.uvi <= 5) {
+            $("#uvIndex").addClass("green");
+           } else if (response.current.uvi <= 10) {
+             $("#uvIndex").addClass("yellow");
+           } else if (response.current.uvi <= 40) {
+               $("#uvIndex").addClass("red");
+           };
+    
     
     $("#fiveDayForecast").append(
-        "<div class='col-md-12'>"
-    );
+         "<h5>" + "5-Day Forecast" + "</h5>" 
+      );
 
-    $("#day1").append(
-        "<div class='fiveDayForecastCard card col s12 m6'>"  +  "<div class='card-body'>"
+    $("#fiveDayForecast").append(
+        "<div id= 'day1' class='card'>"
         +  "<div class='card-header'>" + day1 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink1 + "'>" +"</div>"
         +  "<div class='card-text'>" + "Temperature:" + response.daily[0].temp.day + " °F" + "</div>"
@@ -83,8 +100,8 @@ $(document).ready(function() {
         + "</div>" 
        ); 
 
-    $("#day2").append(
-        "<div class='fiveDayForecastCard card col s12 m6'>"  +  "<div class='card-body'>"
+    $("#fiveDayForecast").append(
+        "<div id= 'day2' class='card col-4'>"
         +  "<div class='card-header'>" + day2 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink2 + "'>" +"</div>"
         +  "<div class='card-text'>" + "Temperature:" + response.daily[1].temp.day + " °F" + "</div>"
@@ -92,8 +109,8 @@ $(document).ready(function() {
         + "</div>" 
        ); 
 
-    $("#day3").append(
-        "<div class='fiveDayForecastCard card col s12 m6'>"  +  "<div class='card-body'>"  
+    $("#fiveDayForecast").append(
+        "<div id= 'day3' class='card col-4'>"
         +  "<div class='card-header'>" + day3 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink3 + "'>" +"</div>"
         +  "<div class='card-text'>" + "Temperature:" + response.daily[2].temp.day + " °F" + "</div>"
@@ -101,24 +118,24 @@ $(document).ready(function() {
         + "</div>" 
        ); 
 
-    $("#day4").append(
-        "<div class='fiveDayForecastCard card col s12 m6'>"  +  "<div class='card-body'>"
+    $("#fiveDayForecast").append(
+        "<div id= 'day4' class='card col-4'>"
         +  "<div class='card-header'>" + day4 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink4 + "'>" +"</div>"
-        +  "<div class='card-text'>" + "Temperature:" + response.daily[3].temp.day + " °F" + "</div>"
-        +  "<div class='card-text'>" + "Humidity: " + response.daily[3].humidity + "%" + "</div>" 
+        +  "<div class='card-text'>" + "Temperature:" + response.daily[5].temp.day + " °F" + "</div>"
+        +  "<div class='card-text'>" + "Humidity: " + response.daily[5].humidity + "%" + "</div>" 
         + "</div>" 
        ); 
 
-    $("#day5").append(
-        "<div class='fiveDayForecastCard card col s12 m6'>"  +  "<div class='card-body'>"
+    $("#fiveDayForecast").append(
+        "<div id= 'day5' class='card col-4'>"
         +  "<div class='card-header'>" + day5 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink5 + "'>" +"</div>"
         +  "<div class='card-text'>" + "Temperature:" + response.daily[4].temp.day + " °F" + "</div>"
         +  "<div class='card-text'>" + "Humidity: " + response.daily[4].humidity + "%" + "</div>" 
         + "</div>" 
        ); 
-
+        getLocations();
         })
       })
     }

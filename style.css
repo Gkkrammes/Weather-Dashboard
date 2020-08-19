@@ -1,53 +1,57 @@
 body {
     font-size: 20px;
     line-height: 1;
-    padding: 20px;
+    padding: 2% 2% 2% 2%;
+    font-family: 'Tenor Sans', sans-serif;
 }
 
-header {
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Cinzel Decorative', cursive;
-    font-weight: bold;
-    height: 135px;
-    background-image: url("https://i.pinimg.com/564x/37/fb/8a/37fb8a548ee4326e187e191b966f3f66.jpg");
+.jumbotron {
+    background-image: url("");
     background-size: 1500px;
     background-position: fixed;
-    padding:25px;
+    padding: 5%;
+    
+}
+
+.display-4 {
+    text-align: center;
+    font-family: 'Coda Caption', sans-serif;
+    color: #a5bdd6;
+    text-shadow: 2px 2px black;
     border-width: 20px;
     border-style: double;
-    border-color: white;
+    border-color: rgb(35, 50, 90);
     border-radius: 20px;
+    background-color: white;
 }
 
-
-.container {
+.container2 {
     float: right;
-    width: 100%;
-    padding-top: 60px;
-    padding-left: 100px;
-    clear: both;
+    width: 70%;
+    padding-top: 15px;
+    padding-left: 10%;
+   
+    
+    
 }
-
 
 aside {
-    height: 100%;
-    position: fixed;
-    padding-top: 50px;
+    
+    padding-top: 15px;
     padding-left: 20px;
+    padding-right: 10px;
+    width: 40%;
 }
 
-section {
-    overflow: auto;
-    clear: both;
-    width: 100%;
-}
 
-.list-group {
-    float: left;
-    width: 25%;
-}
 
+
+.card {
+    width: 60%;
+    text-align: right;
+    
+
+}
 input {
     border-radius: 10px;
     border-color: rgb(7, 134, 92);
@@ -61,7 +65,52 @@ button {
 
 h5 {
     font-size: 22px;
-    text-align: center;
+    text-align: right;
     padding-bottom: 20px;
 }
 
+h6 {
+    padding-left: 2%;
+}
+
+#locationList {
+    font-size: 12px;
+}
+
+.list-group {
+    width: 150px;
+    padding-left: 2%;
+    padding-bottom: 2%;
+}
+
+#fiveDayForecast{
+    font-size: 14px;
+    text-align: right;
+    
+}
+
+.green {
+    background-color:green;
+    color: white;
+    margin-left: 20px;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: none;
+}
+
+.yellow {
+    background-color: yellow;
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: none;
+}
+
+.red {
+    background-color:red;
+    color: black;
+    margin-left: 20px;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: none;
+}
