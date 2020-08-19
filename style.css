@@ -6,21 +6,20 @@ body {
 }
 
 .jumbotron {
-    background-image: url("");
+    background-color: rgb(137, 191, 241);
     background-size: 1500px;
     background-position: fixed;
     padding: 5%;
-    
 }
 
 .display-4 {
     text-align: center;
     font-family: 'Coda Caption', sans-serif;
-    color: #a5bdd6;
+    color: dodgerblue;
     text-shadow: 2px 2px black;
     border-width: 20px;
     border-style: double;
-    border-color: rgb(35, 50, 90);
+    border-color: dodgerblue;
     border-radius: 20px;
     background-color: white;
 }
@@ -30,28 +29,24 @@ body {
     width: 70%;
     padding-top: 15px;
     padding-left: 10%;
-   
-    
-    
 }
 
 aside {
-    
     padding-top: 15px;
     padding-left: 20px;
     padding-right: 10px;
     width: 40%;
 }
 
-
-
+.col {
+    text-align: center;
+}
 
 .card {
-    width: 60%;
-    text-align: right;
-    
-
+    width: 100%;
+    text-align: center;
 }
+
 input {
     border-radius: 10px;
     border-color: rgb(7, 134, 92);
@@ -65,7 +60,7 @@ button {
 
 h5 {
     font-size: 22px;
-    text-align: right;
+    text-align: center;
     padding-bottom: 20px;
 }
 
@@ -85,8 +80,15 @@ h6 {
 
 #fiveDayForecast{
     font-size: 14px;
-    text-align: right;
-    
+    display: inline-block;
+}
+
+#day1, #day2, #day3, #day4, #day5 {
+    background-color: dodgerblue;
+    color: white;
+    display: inline-block;
+    width: 20%;
+    padding-bottom: 20px;
 }
 
 .green {

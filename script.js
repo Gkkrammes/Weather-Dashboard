@@ -101,7 +101,7 @@ $(document).ready(function() {
        ); 
 
     $("#fiveDayForecast").append(
-        "<div id= 'day2' class='card col-4'>"
+        "<div id= 'day2' class='card'>"
         +  "<div class='card-header'>" + day2 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink2 + "'>" +"</div>"
         +  "<div class='card-text'>" + "Temperature:" + response.daily[1].temp.day + " °F" + "</div>"
@@ -110,7 +110,7 @@ $(document).ready(function() {
        ); 
 
     $("#fiveDayForecast").append(
-        "<div id= 'day3' class='card col-4'>"
+        "<div id= 'day3' class='card'>"
         +  "<div class='card-header'>" + day3 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink3 + "'>" +"</div>"
         +  "<div class='card-text'>" + "Temperature:" + response.daily[2].temp.day + " °F" + "</div>"
@@ -119,7 +119,7 @@ $(document).ready(function() {
        ); 
 
     $("#fiveDayForecast").append(
-        "<div id= 'day4' class='card col-4'>"
+        "<div id= 'day4' class='card'>"
         +  "<div class='card-header'>" + day4 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink4 + "'>" +"</div>"
         +  "<div class='card-text'>" + "Temperature:" + response.daily[5].temp.day + " °F" + "</div>"
@@ -128,7 +128,7 @@ $(document).ready(function() {
        ); 
 
     $("#fiveDayForecast").append(
-        "<div id= 'day5' class='card col-4'>"
+        "<div id= 'day5' class='card'>"
         +  "<div class='card-header'>" + day5 +"</div>"
         +  "<div class='card-text'>" + "<img src='" + iconLink5 + "'>" +"</div>"
         +  "<div class='card-text'>" + "Temperature:" + response.daily[4].temp.day + " °F" + "</div>"

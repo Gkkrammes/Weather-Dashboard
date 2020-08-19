@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
 <!--Jumbotron-->
 <div class="jumbotron jumbotron-fluid">
     <div class="container1">
@@ -17,9 +18,10 @@
       
     </div>
   </div>
+
 <!--Search bar-->
-    <aside>
-        <nav class="searchbar"> 
+    <div class="row">
+        <sidebar class="searchbar"> 
             <h4>Enter Location  <i class="fas fa-city"></i></h4>
             <form action="#"> 
                 <input id="search" type="text" placeholder=" Search..."> 
@@ -31,16 +33,13 @@
                 <div id="locationList"> 
                     <ul></ul>
                 </div>
-        </nav> 
-    </aside>
-
-<main class="container2">
+        </sidebar> 
+    
 <!--Daily weather info will display here-->
-    <div class="row"> 
-        
-            <div class="card" id="dailyForecast"></div>
-       
-    </div>
+            <div class="col" id="dailyForecast"></div>
+      </div> 
+ <main class="container">  
+
 <!--5 day weather forecast will display here-->
         <div class="row">
             
